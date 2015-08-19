@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "title": "places.helior.info",
+    "description": "Demonstrate places visited in a three-dimensional panorama."
+  },
+  "plugins": {
+    "metalsmith-markdown": {},
+    "metalsmith-permalinks": {
+      "pattern": ":title"
+    },
+    "metalsmith-templates": {
+      "engine": "handlebars"
+    }
+  }
+}

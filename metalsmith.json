@@ -1,4 +1,6 @@
 {
+  "source": "src/pages",
+  "destination": "dist",
   "metadata": {
     "title": "places.helior.info",
     "description": "Demonstrate places visited in a three-dimensional panorama."
@@ -8,8 +10,14 @@
     "metalsmith-permalinks": {
       "pattern": ":title"
     },
+    "metalsmith-static": {
+      "src": "src/assets",
+      "dest": "."
+    },
+    "metalsmith-autoprefixer": {},
     "metalsmith-templates": {
-      "engine": "handlebars"
+      "engine": "handlebars",
+      "directory": "src/templates"
     }
   }
 }

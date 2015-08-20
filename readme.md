@@ -1,9 +1,6 @@
 TODO:
-- Pull in static JS assets
-- Pull in static image assets
-- get image source into Three.js via html data attribute
 - organize `src` directory
-- make index file
-- Version control, Helior!
+- make index file (collections)
+- make next/previous links in places pages
 - Auto-push to `gh-pages` branch upon merging to master
-- CNAME places.helior.info
+- use grab/grabbing cursors when interacting with images

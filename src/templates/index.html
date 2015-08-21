@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="/styles/site.css" />
 </head>
 <body class="home">
-  <ul>
+  <ul class="index-navigation">
     {{#each this.places}}
-      <li><a href="/{{this.path}}">{{this.country}}, {{this.city}} – {{this.title}}</a></li>
+      <li><a href="/{{this.path}}"><span class="index-title">{{this.title}} <br /> <span class="location">{{this.country}}, {{this.city}}</span><span></a></li>
     {{/each}}
   </ul>
 </body>

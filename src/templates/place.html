@@ -7,17 +7,25 @@
   <link rel="stylesheet" href="/styles/site.css" />
 </head>
 <body class="place" data-image="{{ image }}">
-  <div class="navigation-container">
-    <ul class="navigation">
-      {{#if this.previous}}
-      <li><a href="/{{this.previous.path}}">{{this.previous.title}} – {{this.previous.city}}, {{this.previous.country}}</a></li>
-      {{/if}}
-      <li><a href="/">Home</a></li>
-      {{#if this.next}}
-      <li><a href="/{{this.next.path}}">{{this.next.title}} – {{this.next.city}}, {{this.next.country}}</a></li>
-      {{/if}}
+  <div class="navigation">
+    <ul>
+      <li>
+        {{#if this.previous}}
+        <a href="/{{this.previous.path}}" title="{{this.previous.title}} – {{this.previous.city}}, {{this.previous.country}}">Previous</a>
+        {{/if}}
+      </li>
+      <li>
+        <span class="title">{{title}} — {{city}}, {{country}}</span>
+        <span class="go-home"><a href="/">Return to home</a></span>
+      </li>
+      <li>
+        {{#if this.next}}
+        <a href="/{{this.next.path}}" title="{{this.next.title}} – {{this.next.city}}, {{this.next.country}}">Next</a>
+        {{/if}}
+      </li>
     </ul>
   </div>
+  
   <div id="container"></div>
   <script src="/scripts/threejs/three.min.js"></script>
   <script src="/scripts/threejs/renderers/Projector.js"></script>

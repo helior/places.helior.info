@@ -1,9 +1,86 @@
 body {
-  background-color: rgb(200,200,200);
+  background-color: #000;
   margin:0;
   padding:0;
   overflow: hidden;
+  font-family: sans-serif;
+  font-size:12px;
 }
 canvas {
   cursor:move;
+}
+
+a {
+  color:#eee;
+}
+
+/** Index Navigation */
+.index-navigation {
+  margin:20px;
+}
+
+.index-navigation li {
+  display:inline-block;
+  overflow:hidden;
+  text-align:center;
+}
+
+.index-navigation a {
+  background-color:#666;
+  display:block;
+  width:120px;
+  height:120px;
+  line-height:120px;
+}
+.index-navigation a:hover, .index-navigation a:active {
+  background-color:#333;
+}
+.index-navigation .index-title {
+  display:inline-block;
+  vertical-align:middle;
+  line-height:normal;
+}
+.index-navigation .location {
+  color: #ccc;
+  font-size:0.9em;
+}
+
+/* Places Navigation */
+.navigation {
+  display:table;
+  width:100%;
+  color:#fff;
+  background: #595f60;
+  background: -webkit-linear-gradient(#595f60 0%, #000000 100%);
+  background: -moz-linear-gradient(#595f60 0%, #000000 100%);
+  background: -o-linear-gradient(#595f60 0%, #000000 100%);
+  background: linear-gradient(#595f60 0%, #000000 100%);
+}
+.navigation ul {
+  display:table-row;
+}
+.navigation li {
+  display:table-cell;
+  text-align: center;
+  padding:5px;
+  border:1px solid #000;
+  vertical-align:middle;
+}
+
+.navigation li:first-child, .navigation li:last-child {
+  width:80px;
+}
+.navigation a {
+  color:#ccc;
+  text-decoration:none;
+}
+.navigation a:hover, .navigation a:active {
+  color:#fff;
+}
+
+.navigation .title, .navigation .go-home {
+  display:block;
+}
+.navigation .go-home {
+  font-size: 0.8em;
 }

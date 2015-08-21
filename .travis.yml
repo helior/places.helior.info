@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - "0.12"
+branches:
+  only:
+    - master
+env:
+  global:
+    - DEPLOY_BRANCH: gh-pages
+    - DEPLOY_DIR: _deploy
+    - GIT_NAME: "Helior Colorado"
+    - GIT_EMAIL: me@helior.info
+    - GH_OWNER: helior
+    - GH_PROJECT: places.helior.info
+before_install:
+  - npm install
+install: make build
+script: true
+after_sucess:
+  - env

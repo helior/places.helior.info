@@ -6,6 +6,7 @@ branches:
     - master
 env:
   global:
+    - SRC_DIR: dist
     - DEPLOY_BRANCH: gh-pages
     - DEPLOY_DIR: _deploy
     - GIT_NAME: "Helior Colorado"
@@ -14,5 +15,14 @@ env:
     - GH_PROJECT: places.helior.info
 script: make build
 after_success:
-  - env
-  - echo "hello world"
+  - git clone -b "$DEPLOY_BRANCH" https://"$GH_OAUTH_TOKEN"@github.com/"$GH_OWNER"/"$GH_PROJECT" "$DEPLOY_DIR" > /dev/null 2>&1
+  - cd "$DEPLOY_DIR"
+  - git checkout "$DEPLOY_BRANCH" || git checkout -b "$DEPLOY_BRANCH"
+  - git rm -r .
+  - cp -R ../"$SRC_DIR"/* .
+  - cp ../"$SRC_DIR"/.* .
+  - git add -f .
+  - git config --global user.email "$GIT_EMAIL"
+  - git config --global user.name "$GIT_NAME"
+  - git commit -am "Travis deploying $TRAVIS_COMMIT_RANGE to $DEPLOY_BRANCH"
+  - git push https://"$GH_OAUTH_TOKEN"@github.com/"$GH_OWNER"/"$GH_PROJECT" HEAD:"$DEPLOY_BRANCH" > /dev/null 2>&1

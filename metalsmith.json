@@ -6,9 +6,14 @@
     "description": "Demonstrate places visited in a three-dimensional panorama."
   },
   "plugins": {
+    "metalsmith-collections": {
+      "places": {
+        "pattern": "places/*.md"
+      }
+    },
     "metalsmith-markdown": {},
     "metalsmith-permalinks": {
-      "pattern": ":title"
+      "pattern": ":collection/:country/:city/:title"
     },
     "metalsmith-static": {
       "src": "src/assets",

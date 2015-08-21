@@ -1,1 +1,16 @@
-Hello!!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Places</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <link rel="stylesheet" href="/styles/site.css" />
+</head>
+<body class="home">
+  <ul>
+    {{#each this.places}}
+      <li><a href="/{{this.path}}">{{this.country}}, {{this.city}} – {{this.title}}</a></li>
+    {{/each}}
+  </ul>
+</body>
+</html>

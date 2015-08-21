@@ -30,7 +30,7 @@ function init() {
   mesh.renderDepth = 1000.0;
   scene.add(mesh);
 
-  renderer = new THREE.CanvasRenderer();
+  renderer = webglAvailable() ? new THREE.WebGLRenderer() : new THREE.CanvasRenderer();
   renderer.setPixelRatio( window.devicePixelRatio );
   renderer.setSize( window.innerWidth, window.innerHeight );
   container.appendChild( renderer.domElement );
@@ -101,7 +101,7 @@ function animate() {
 
 function update() {
   if ( isUserInteracting === false ) {
-    lon += 0.01;
+    lon += 0.1;
   }
 
   lat = Math.max( - 85, Math.min( 85, lat ) );
@@ -114,4 +114,16 @@ function update() {
 
   camera.lookAt( target );
   renderer.render( scene, camera );
+}
+
+function webglAvailable() {
+	try {
+		var canvas = document.createElement( 'canvas' );
+		return !!( window.WebGLRenderingContext && (
+			canvas.getContext( 'webgl' ) ||
+			canvas.getContext( 'experimental-webgl' ) )
+		);
+	} catch ( e ) {
+		return false;
+	}
 }

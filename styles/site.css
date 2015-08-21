@@ -1,0 +1,7 @@
+body {
+  background-color: rgb(200,200,200);
+  margin:0;
+  padding:0;
+  overflow: hidden;
+  cursor:move;
+}

@@ -13,5 +13,6 @@ env:
     - GH_OWNER: helior
     - GH_PROJECT: places.helior.info
 script: make build
-after_sucess:
+after_success:
   - env
+  - echo "hello world"

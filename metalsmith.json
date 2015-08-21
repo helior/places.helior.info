@@ -19,7 +19,6 @@
       "src": "src/assets",
       "dest": "."
     },
-    "metalsmith-autoprefixer": {},
     "metalsmith-templates": {
       "engine": "handlebars",
       "directory": "src/templates"

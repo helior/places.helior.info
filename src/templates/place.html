@@ -7,18 +7,21 @@
   <link rel="stylesheet" href="/styles/site.css" />
 </head>
 <body class="place" data-image="{{ image }}">
-  <ul class="navigation">
-    {{#if this.previous}}
-    <li><a href="/{{this.previous.path}}">{{this.previous.title}} – {{this.previous.city}}, {{this.previous.country}}</a></li>
-    {{/if}}
-    <li><a href="/">Home</a></li>
-    {{#if this.next}}
-    <li><a href="/{{this.next.path}}">{{this.next.title}} – {{this.next.city}}, {{this.next.country}}</a></li>
-    {{/if}}
-  </ul>
+  <div class="navigation-container">
+    <ul class="navigation">
+      {{#if this.previous}}
+      <li><a href="/{{this.previous.path}}">{{this.previous.title}} – {{this.previous.city}}, {{this.previous.country}}</a></li>
+      {{/if}}
+      <li><a href="/">Home</a></li>
+      {{#if this.next}}
+      <li><a href="/{{this.next.path}}">{{this.next.title}} – {{this.next.city}}, {{this.next.country}}</a></li>
+      {{/if}}
+    </ul>
+  </div>
   <div id="container"></div>
   <script src="/scripts/threejs/three.min.js"></script>
   <script src="/scripts/threejs/renderers/Projector.js"></script>
+  <script src="/scripts/threejs/renderers/WebGLRenderer.js"></script>
   <script src="/scripts/threejs/renderers/CanvasRenderer.js"></script>
   <script src="/scripts/place.js"></script>
 </body>

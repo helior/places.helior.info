@@ -8,7 +8,7 @@
   "plugins": {
     "metalsmith-collections": {
       "places": {
-        "pattern": "places/*.md"
+        "pattern": "places/**/*.md"
       }
     },
     "metalsmith-markdown": {},

@@ -1,11 +1,13 @@
 {
   "source": "src/pages",
   "destination": "dist",
+  "clean": false,
   "metadata": {
     "title": "places.helior.info",
     "description": "Demonstrate places visited in a three-dimensional panorama."
   },
   "plugins": {
+    "metalsmith-changed": {},
     "metalsmith-collections": {
       "places": {
         "pattern": "places/**/*.md"

@@ -7,6 +7,7 @@
   "devDependencies": {
     "handlebars": "^3.0.3",
     "metalsmith": "^2.0.1",
+    "metalsmith-changed": "^0.2.0",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-permalinks": "^0.4.0",

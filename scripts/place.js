@@ -21,7 +21,9 @@ function init() {
   var bodyElement = document.getElementsByTagName('body')[0];
   var imagepath = "/images/" + bodyElement.dataset.image;
   var geometry = new THREE.SphereGeometry(600, 100, 100);
-  var material = new THREE.MeshBasicMaterial({map: THREE.ImageUtils.loadTexture(imagepath), overdraw: 0.5});
+  var texture = THREE.ImageUtils.loadTexture(imagepath);
+  texture.minFilter = THREE.NearestFilter;
+  var material = new THREE.MeshBasicMaterial({map: texture, overdraw: 0.5});
 
   // Common Mesh
   mesh = new THREE.Mesh(geometry, material);
@@ -35,11 +37,11 @@ function init() {
   renderer.setSize( window.innerWidth, window.innerHeight );
   container.appendChild( renderer.domElement );
 
-  document.addEventListener( 'mousedown', onDocumentMouseDown, false );
-  document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-  document.addEventListener( 'mouseup', onDocumentMouseUp, false );
-  document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-  document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+  container.addEventListener( 'mousedown', onDocumentMouseDown, false );
+  container.addEventListener( 'mousemove', onDocumentMouseMove, false );
+  container.addEventListener( 'mouseup', onDocumentMouseUp, false );
+  container.addEventListener( 'touchstart', onDocumentTouchStart, false );
+  container.addEventListener( 'touchmove', onDocumentTouchMove, false );
   window.addEventListener( 'resize', onWindowResize, false );
 }
 

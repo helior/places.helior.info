@@ -16,21 +16,24 @@ a {
 
 /** Index Navigation */
 .index-navigation {
-  margin:20px;
+  margin:8px;
+  padding:0;
 }
 
 .index-navigation li {
   display:inline-block;
   overflow:hidden;
   text-align:center;
+  margin:0;
 }
 
 .index-navigation a {
   background-color:#666;
   display:block;
-  width:120px;
-  height:120px;
-  line-height:120px;
+  width:90px;
+  height:90px;
+  line-height:90px;
+  border:1px solid #000;
 }
 .index-navigation a:hover, .index-navigation a:active {
   background-color:#333;
@@ -69,10 +72,13 @@ a {
 
 .navigation li:first-child, .navigation li:last-child {
   width:80px;
+  padding:0;
 }
 .navigation a {
   color:#ccc;
   text-decoration:none;
+  display:inline-block;
+  width:100%;
 }
 .navigation a:hover, .navigation a:active {
   color:#fff;

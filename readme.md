@@ -11,3 +11,4 @@
 
 ###### Nice-to-have TODOs:
 - use grab/grabbing cursors when interacting with images
+- use metalsmith-convert to auto-optimize images (and produce thumbnails for main navigation)
